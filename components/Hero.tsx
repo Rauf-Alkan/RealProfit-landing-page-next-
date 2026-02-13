@@ -35,7 +35,6 @@ export const Hero: React.FC = () => {
             See How It Works
           </a>
         </div>
-        
         <p className="text-sm text-zinc-500">
           Early access is limited to serious Shopify operators.
         </p>

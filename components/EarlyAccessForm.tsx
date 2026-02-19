@@ -1,91 +1,90 @@
-// src/components/EarlyAccessForm.tsx
-'use client'; // Next.js etkileşim için bunu ister
+'use client';
 import React, { useState } from 'react';
 
 export const EarlyAccessForm: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitted'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('loading');
-
-    try {
-      const response = await fetch('/api/early-access', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (err) {
-      setStatus('error');
-    }
+    // Burada form verilerini alıp backend'e göndereceksin.
+    setStatus('submitted');
   };
-  return (
-    <section id="early-access" className="py-24 px-6 bg-[#050505]">
-      <div className="max-w-xl mx-auto">
-        <div className="p-8 md:p-12 rounded-3xl border border-emerald-500/20 bg-emerald-500/[0.02] relative overflow-hidden">
-          {/* Accent decoration */}
-          <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 blur-[60px] rounded-full"></div>
-          
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Join the Early Access List</h2>
-            <p className="text-zinc-400 text-center mb-8 leading-relaxed">
-              Real Profit is currently in invitation-only development. Early users get priority access and a direct line to our roadmap.
-            </p>
 
-            {status === 'success' ? (
-              <div className="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-6 rounded-2xl text-center">
-                <h3 className="font-bold text-xl mb-2">You're on the list!</h3>
-                <p>We'll reach out as soon as a spot opens up for your brand.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-5 py-4 bg-zinc-900 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-white placeholder:text-zinc-600"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Shopify Email</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="john@yourstore.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-5 py-4 bg-zinc-900 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all text-white placeholder:text-zinc-600"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-bold text-lg rounded-xl transition-all shadow-lg"
-                >
-                  {status === 'loading' ? 'Requesting...' : 'Request Early Access'}
-                </button>
-                <p className="text-center text-xs text-zinc-500 mt-4">
-                  No spam. Only critical product updates. Limited spots available.
-                </p>
-              </form>
-            )}
-            
-            {status === 'error' && (
-              <p className="text-red-500 text-sm mt-4 text-center">Something went wrong. Please try again.</p>
-            )}
+  return (
+    <section id="early-access" className="py-24 px-6 bg-[#050505] relative border-t border-zinc-900">
+      <div className="max-w-3xl mx-auto">
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          
+          {/* Subtle background element */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+
+          <div className="relative z-10 text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-300 text-xs font-bold uppercase tracking-widest mb-6">
+              <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+              Private Beta Application
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Apply For Early Access</h2>
+            <p className="text-zinc-400 text-lg">
+              To ensure system stability and provide white-glove onboarding, we are strictly limiting access. We accept high-volume operators first.
+            </p>
           </div>
+
+          {status === 'idle' ? (
+            <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="name" className="text-sm font-medium text-zinc-300">Your Name</label>
+                  <input required type="text" id="name" className="w-full bg-[#050505] border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors" placeholder="John Doe" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium text-zinc-300">Work Email</label>
+                  <input required type="email" id="email" className="w-full bg-[#050505] border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors" placeholder="founder@brand.com" />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="store" className="text-sm font-medium text-zinc-300">Shopify Store URL</label>
+                  <input required type="text" id="store" className="w-full bg-[#050505] border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors" placeholder="yourbrand.myshopify.com" />
+                </div>
+                
+                {/* THE 80/20 FILTER DROPDOWN */}
+                <div className="space-y-2">
+                  <label htmlFor="revenue" className="text-sm font-medium text-zinc-300">Average Monthly Revenue</label>
+                  <select required id="revenue" className="w-full bg-[#050505] border border-zinc-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors appearance-none">
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="under_10k">Under $10,000</option>
+                    <option value="10k_50k">$10,000 - $50,000</option>
+                    <option value="50k_250k">$50,000 - $250,000</option>
+                    <option value="over_250k">$250,000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" className="w-full bg-white hover:bg-zinc-200 text-black font-bold text-lg rounded-xl px-8 py-4 mt-4 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center gap-2">
+                Submit Application
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
+              
+              <p className="text-center text-xs text-zinc-600 mt-4">
+                By applying, you understand that Real Profit connects strictly via Payouts and requires accurate COGS data to function effectively.
+              </p>
+            </form>
+          ) : (
+            <div className="text-center py-12 relative z-10 border border-emerald-900/30 bg-emerald-950/10 rounded-2xl">
+              <div className="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">Application Received.</h3>
+              <p className="text-zinc-400">Our team will review your store details. If you qualify for the current rollout phase, we will contact you via email shortly.</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

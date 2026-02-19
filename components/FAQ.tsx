@@ -28,24 +28,24 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 export const FAQ: React.FC = () => {
   const faqs = [
     {
-      question: "How is this different from Shopify analytics?",
-      answer: "Shopify shows you orders and revenue, often including tax and excluding many processing fees. Real Profit connects to your Payouts data, matching costs precisely to the moment money is cleared for deposit. We also provide a unified view for multiple stores, which Shopify lacks."
+      question: "Why should I use this instead of basic Shopify analytics?",
+      answer: "Shopify's dashboard shows you an illusion of success. It displays gross revenue the second an order drops, entirely ignoring the 2.9% + 30¢ processing fees, delayed refunds, and precise payout schedules. Real Profit doesn't guess; we reconcile directly with the money cleared for deposit."
     },
     {
-      question: "Does this replace accounting software?",
-      answer: "No. Think of Real Profit as your daily flight deck. While accounting software like QuickBooks is for your tax compliance, Real Profit is for your daily decision-making as an operator."
+      question: "What exactly does 'Payout-Driven Reconciliation' mean?",
+      answer: "Most apps assume a transaction is profitable immediately. We wait. We sync with Shopify's Payout data to ensure every chargeback, return, and hidden fee is deducted. We match your dashboard to your actual bank account. If the money isn't in your bank, it's not profit."
     },
     {
-      question: "Is this built for multi-store brands?",
-      answer: "Absolutely. Multi-store architecture is at our core. You can aggregate all stores into one dashboard or drill into specific entities without logging in and out."
+      question: "Can it handle my multi-store architecture?",
+      answer: "Yes. Unlike other tools that force you to log in and out or run parallel spreadsheets, Real Profit aggregates all your entities into one global dashboard, while allowing instant drill-downs into specific stores."
     },
     {
-      question: "How does payout-based profit calculation work?",
-      answer: "Instead of assuming a transaction is successful the moment an order is placed, we wait for the Shopify Payout sync. This ensures that every refund, chargeback, and processing fee is accounted for accurately before we report a 'Net Profit' number."
+      question: "I only do about $3,000 a month in revenue. Can I use this?",
+      answer: "Currently, no. Our infrastructure and onboarding process are designed strictly for serious operators scaling $10k+ a month who are dealing with complex COGS, ad spend, and multi-store operations."
     },
     {
-      question: "When will early access begin?",
-      answer: "We are rolling out spots weekly to ensure high-touch support for our initial cohort. Typically, users receive an invitation within 2-4 weeks of joining the waitlist."
+      question: "Is this replacing QuickBooks or Xero?",
+      answer: "No. QuickBooks is for your accountant at tax time. Real Profit is the daily financial flight deck for you, the operator, to make aggressive scaling decisions based on actual cash flow today."
     }
   ];
 

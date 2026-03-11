@@ -5,7 +5,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-zinc-800">
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex items-center justify-between text-left hover:text-emerald-400 transition-colors"
       >
@@ -17,9 +17,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
         </span>
       </button>
       {isOpen && (
-        <div className="pb-6 text-zinc-500 leading-relaxed">
-          {answer}
-        </div>
+        <div className="pb-6 text-zinc-500 leading-relaxed">{answer}</div>
       )}
     </div>
   );
@@ -28,31 +26,35 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
 export const FAQ: React.FC = () => {
   const faqs = [
     {
-      question: "Why should I use this instead of basic Shopify analytics?",
-      answer: "Shopify's dashboard shows you an illusion of success. It displays gross revenue the second an order drops, entirely ignoring the 2.9% + 30¢ processing fees, delayed refunds, and precise payout schedules. Real Profit doesn't guess; we reconcile directly with the money cleared for deposit."
+      question: "Shopify Plus aboneliğim yok, çalışır mı?",
+      answer: "Evet. DeclineShield checkout sayfasına girmiyor — buton intercept yöntemiyle çalışıyor. Bu yüzden Basic, Advanced veya herhangi bir Shopify planında sorunsuz çalışır. Plus aboneliğine gerek yok."
     },
     {
-      question: "What exactly does 'Payout-Driven Reconciliation' mean?",
-      answer: "Most apps assume a transaction is profitable immediately. We wait. We sync with Shopify's Payout data to ensure every chargeback, return, and hidden fee is deducted. We match your dashboard to your actual bank account. If the money isn't in your bank, it's not profit."
+      question: "Sadece Türk müşterilere mi gösteriyor?",
+      answer: "Varsayılan olarak evet. Türkiye lokasyonundan gelen ziyaretçilere gösterir, diğer ülkelerden gelenlere dokunmaz. Test modu ile tüm ziyaretçilere gösterebilirsin."
     },
     {
-      question: "Can it handle my multi-store architecture?",
-      answer: "Yes. Unlike other tools that force you to log in and out or run parallel spreadsheets, Real Profit aggregates all your entities into one global dashboard, while allowing instant drill-downs into specific stores."
+      question: "Müşteri popup'ı görünce kaçmaz mı?",
+      answer: "Tam tersi — müşteri neden ödeme yapamadığını anlar ve çözümünü bulur. Sessiz bir red karşısında sayfayı terk eden müşteri, adım adım rehber gördüğünde kalmayı tercih eder. Test verilerimiz bunu gösteriyor."
     },
     {
-      question: "I only do about $3,000 a month in revenue. Can I use this?",
-      answer: "Currently, no. Our infrastructure and onboarding process are designed strictly for serious operators scaling $10k+ a month who are dealing with complex COGS, ad spend, and multi-store operations."
+      question: "Kaç bankayı destekliyor?",
+      answer: "Şu an Garanti BBVA, İş Bankası ve Ziraat Bankası destekleniyor. Halkbank, Yapı Kredi, Akbank yakında eklenecek. Hindistan için de destek geliyor."
     },
     {
-      question: "Is this replacing QuickBooks or Xero?",
-      answer: "No. QuickBooks is for your accountant at tax time. Real Profit is the daily financial flight deck for you, the operator, to make aggressive scaling decisions based on actual cash flow today."
+      question: "Fiyatlandırma nasıl?",
+      answer: "$9.99/ay sabit abonelik. 7 gün ücretsiz deneme, kredi kartı gerekmez. İstediğin zaman iptal edebilirsin. Tek bir kurtarılan satış bile aylık ücreti karşılar."
+    },
+    {
+      question: "Rakipler var mı, neden sizi seçmeliyim?",
+      answer: "Genel checkout abandon araçları var ama hiçbiri Türkiye'deki banka kartı sorununu özelinde çözemiyor. Rakamlar, banka bazında rehber, Türkçe destek — bunlar genel araçlarda yok."
     }
   ];
 
   return (
     <section id="faq" className="py-24 px-6 bg-[#050505]">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Sık Sorulan Sorular</h2>
         <div className="space-y-2">
           {faqs.map((faq, i) => (
             <FAQItem key={i} question={faq.question} answer={faq.answer} />

@@ -9,16 +9,18 @@ import { Vision } from '@/components/Vision';
 import { EarlyAccessForm } from '@/components/EarlyAccessForm';
 import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
+import { DashboardSection } from '@/components/DashboardSection';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#050505] overflow-x-hidden text-white">
       <Navigation />
       <main>
-        <Hero />
+         <Hero />
         <Problem />
         <HowItWorks />
         <Features />
+        <DashboardSection />
         <Comparison />
         <Vision />
         <EarlyAccessForm />

@@ -3,44 +3,36 @@ import React from 'react';
 export const Features: React.FC = () => {
   const features = [
     {
-      title: "Payout-Driven Reconciliation",
-      desc: "This is not an estimate. We match every Shopify order to the exact moment the cash hits your bank. Every hidden fee, reconciled.",
+      title: "Akıllı Ülke Tespiti",
+      desc: "Shopify'ın lokasyon verisini kullanır. Sadece Türk müşterilere gösterir — yabancı müşterilere hiç dokunmaz.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3 1.343 3 3-1.343 3-3 3m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       )
     },
     {
-      title: "Global Multi-Store Command",
-      desc: "Kill the tab-switching chaos. Aggregate all your Shopify entities into one ruthless, unified profit view.",
+      title: "Banka Bazında Rehber",
+      desc: "Garanti, İş Bankası, Ziraat — her banka için adım adım kart açma talimatı. Müşteri kafası karışmaz.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
       )
     },
     {
-      title: "Instant Bulk COGS Sync",
-      desc: "Stop manually editing stale spreadsheets. Upload your CSV and sync thousands of product costs in seconds.",
+      title: "3 Noktada Koruma",
+      desc: "Hemen Al butonu, sepet çekmecesi ve sepet sayfası — müşteri nereye basarsa bassın, popup devreye girer.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       )
     },
     {
-      title: "Hidden Fee Exposure",
-      desc: "Currency conversions, exact refund drains, and Shopify's processing cuts—dragged into the light so you can protect your margins.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      )
-    },
-    {
-      title: "Store Detail Drill-Down",
-      desc: "Identify your bleeding stores and your winning stores instantly. No fluff, just the raw financial data.",
+      title: "Kurtarılan Ciro Takibi",
+      desc: "Dashboard'da kaç müşteri uyarıldı, kaç tanesi ödemeye devam etti, tahmini kurtarılan ciro ne kadar — hepsi görünür.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -48,11 +40,20 @@ export const Features: React.FC = () => {
       )
     },
     {
-      title: "Built For Scale",
-      desc: "Your data won't break when you cross $100k/mo. The ledger system handles massive transaction volume with zero lag.",
+      title: "Tasarım Stüdyosu",
+      desc: "Başlık, metin, buton rengi — markanla uyumlu hale getir. Tek satır kod yazmadan.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+        </svg>
+      )
+    },
+    {
+      title: "Plus Gerektirmez",
+      desc: "Shopify Basic'te çalışır. $2.000/ay Plus aboneliği olmadan checkout'a müdahale eder — akıllı mimari sayesinde.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       )
     }
@@ -62,10 +63,9 @@ export const Features: React.FC = () => {
     <section id="features" className="py-24 px-6 bg-zinc-950/50">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Engineered to stop the bleeding.</h2>
-          <p className="text-zinc-400 text-lg">We didn't build a dashboard. We built a financial ledger that forces your data to tell the truth.</p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Kayıpları Durdurmak İçin Tasarlandı.</h2>
+          <p className="text-zinc-400 text-lg">Bir popup yapmadık. Satış kurtarma motoru yaptık.</p>
         </div>
-        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f, i) => (
             <div key={i} className="group p-8 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-900 transition-all">

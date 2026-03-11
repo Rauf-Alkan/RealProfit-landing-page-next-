@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
             href="#early-access"
             className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-zinc-200 text-black font-bold text-lg rounded-xl transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]"
           >
-            Ücretsiz Dene — 7 Gün
+            Hemen Başla — $9.99/ay
           </a>
           <a
             href="#problem"
@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
           </a>
         </div>
         <p className="text-sm text-zinc-500 font-medium">
-          * Kurulum 2 dakika. Kredi kartı gerekmez.
+          * Kurulum 2 dakika. İstediğin zaman iptal edebilirsin.
         </p>
       </div>
     </section>

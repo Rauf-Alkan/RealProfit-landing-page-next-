@@ -20,11 +20,11 @@ export const EarlyAccessForm: React.FC = () => {
               <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              7 Gün Ücretsiz — Sonra $9.99/ay
+              Sadece $9.99/ay
             </div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Hemen Başla</h2>
             <p className="text-zinc-400 text-lg">
-              Kurulum 2 dakika. Kredi kartı gerekmez. İlk müşteri geldiği andan itibaren koruma başlar.
+              Kurulum 2 dakika. İlk müşteri geldiği andan itibaren koruma başlar.
             </p>
           </div>
 
@@ -68,14 +68,14 @@ export const EarlyAccessForm: React.FC = () => {
                 type="submit"
                 className="w-full bg-white hover:bg-zinc-200 text-black font-bold text-lg rounded-xl px-8 py-4 mt-4 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] flex items-center justify-center gap-2"
               >
-                Ücretsiz Başla
+                
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </button>
 
               <p className="text-center text-xs text-zinc-600 mt-4">
-                7 günlük deneme süresinde ücret alınmaz. İstediğin zaman iptal edebilirsin.
+                İstediğin zaman iptal edebilirsin.
               </p>
             </form>
           ) : (

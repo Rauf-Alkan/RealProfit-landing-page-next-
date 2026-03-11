@@ -14,7 +14,7 @@ export const DashboardSection: React.FC = () => {
         {/* 3 stat cards */}
         <div className="grid grid-cols-3 gap-6 mb-10 max-w-3xl mx-auto">
           {[
-            { val: "$9,035", label: "Tahmini Kurtarılan Ciro", color: "text-emerald-400" },
+            { val: "$8,135.50", label: "Tahmini Kurtarılan Ciro", color: "text-emerald-400" },
             { val: "5", label: "Kurtarılan Sepet", color: "text-blue-400" },
             { val: "10", label: "Kalkan Gösterimi", color: "text-purple-400" },
           ].map((stat, i) => (

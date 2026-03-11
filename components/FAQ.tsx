@@ -43,7 +43,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "Fiyatlandırma nasıl?",
-      answer: "$9.99/ay sabit abonelik. 7 gün ücretsiz deneme, kredi kartı gerekmez. İstediğin zaman iptal edebilirsin. Tek bir kurtarılan satış bile aylık ücreti karşılar."
+      answer: "$9.99/ay sabit abonelik. İstediğin zaman iptal edebilirsin. Tek bir kurtarılan satış bile aylık ücreti karşılar."
     },
     {
       question: "Rakipler var mı, neden sizi seçmeliyim?",
